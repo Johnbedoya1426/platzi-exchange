@@ -11,8 +11,17 @@ module.exports = {
   parserOptions: {
     parser: "@babel/eslint-parser",
   },
+  overrides: [
+    {
+      files: ["src/views/**/*.vue"],
+      rules: {
+        "vue/multi-word-component-names": "off",
+      },
+    },
+  ],
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "vue/multi-word-component-names": "off",
   },
 };
